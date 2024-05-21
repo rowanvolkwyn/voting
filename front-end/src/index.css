@@ -1,0 +1,118 @@
+:root {
+  --background: #0F182A;
+  --foregroud: #1E2A3B;
+  --highlight: #2A3649;
+  --accent: #F158B1;
+  --action: #00DAC6;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
+  background-color: var(--background);
+}
+
+#map-container {
+  width: 70%;
+  margin: 5px auto;
+  background-color: var(--foregroud);
+  border-radius: 20px;
+  border: 2px solid var(--background);
+  width: 350px;
+  height: 255px;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease;
+}
+
+#map-container:hover {
+  background-color: #0F182A;
+  border: 2px solid #ccc;
+}
+
+.map-image {
+  width: 350px;
+  border-radius: 20px 20px 0 0;
+  cursor: pointer;
+  height: 197px;
+  object-fit: cover;
+}
+
+#info {
+  padding: 0 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#info h2 {
+  margin: 15px;
+  cursor: pointer;
+}
+
+.selectedH2 {
+  color: white;
+}
+
+.unselectedH2 {
+  color: grey;
+}
+
+select {
+  width: 100px;
+  border-radius: 5px;
+}
+
+.status {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
+h1 {
+  text-align: center;
+}
+
+#submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#submit button {
+  margin: 10px;
+  padding: 15px 30px;
+  border-radius: 5px;
+  background-color: var(--action);
+  color: var(--background);
+  cursor: pointer;
+  font-size: large;
+  font-weight: bold;
+}
+
+#submit button:hover {
+  margin: 10px;
+  padding: 15px 30px;
+  border-radius: 5px;
+  background-color: var(--accent);
+  color: var(--background);
+  cursor: pointer;
+  font-size: large;
+  font-weight: bold;
+}
+
+#user-name {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  color: var(--background);
+  font-size: large;
+  font-weight: bold;
+}
+
+#component-container {
+  margin-bottom: 100px;
+}
