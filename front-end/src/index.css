@@ -76,10 +76,29 @@ h1 {
   text-align: center;
 }
 
-#submit {
+#selected {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#submit {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+#title {
+  font-size: 3rem;
+}
+
+#instructions {
+  width: 50%;
+  margin: 0 auto 3cqh;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  text-align: center;
 }
 
 #submit button {
