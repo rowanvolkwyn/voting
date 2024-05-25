@@ -1,13 +1,19 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import tick from '../assets/tick.png';
 import cross from '../assets/cross.png'
 
 const Map = (props) => {
 
-    const { name, image, decrement, increment } = props;
-
+    const { name, image, decrement, increment, updateMap } = props;
     const [ selected, setSelected ] = useState(false);
+    const [ selectedGameMode, setSelectedGameMode ] = useState('TDM');
+
+    useEffect(() => {
+        if (selected) {
+            updateMap({ name, selectedGameMode });
+        } 
+    }, [selectedGameMode, selected]);
 
     const changeSelection = () => {
         if (selected) {
@@ -18,6 +24,10 @@ const Map = (props) => {
             increment();
         }
     }
+    
+    const handleOptionChange = (e) => {
+        setSelectedGameMode(e.target.value);
+    }
 
     return (
         <div id='map-container'>
@@ -27,7 +37,7 @@ const Map = (props) => {
                 <h2 className={selected ? 'selectedH2' : 'unselectedH2'} onClick={changeSelection}>{name}</h2>
                 {selected && (
                     <form>
-                        <select>
+                        <select id='options' onChange={handleOptionChange}>
                             <option value="TDM">Team Deathmatch</option>
                             <option value="KC">Kill Confirmed</option>
                             <option value="DOM">Domination</option>

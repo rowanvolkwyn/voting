@@ -10,14 +10,7 @@ const Submit = () => {
             The most popular maps will be added to the schedule. Game modes may be reallocated to make sure each 
             mode is played roughly the same amount. Once you've made your selections, enter your name and click Submit. <br></br>
             <br></br>
-            Please only vote once.</p>
-            <div id='submit'>
-                <form>
-                    <input id='user-name' type='text' placeholder='Enter your name'/>
-                </form>
-                <button onClick={handleSubmit}>Submit</button>
-                <h3 id='response'></h3>
-            </div>  
+            Please only vote once for each game.</p>  
         </>      
     )
 }
