@@ -33,16 +33,12 @@ const deleteVote = async (req, res) => {
 }
 
 const submitVote = async (req, res) => {
-    const { name, mwVotes, mw2Votes, mw3Votes, boVotes, bo2Votes } = req.body;
+    const { name, boVotes } = req.body;
     console.log('Recieved vote:', req.body);
 
     const newVote = new Vote({
         name,
-        mwVotes,
-        mw2Votes,
-        mw3Votes,
-        boVotes,
-        bo2Votes
+        boVotes
     });
 
     try {

@@ -50,10 +50,30 @@ const BO = () => {
         });
     }
 
+    const handleGet = async () => {
+        try {
+            const response = await fetch('http://localhost:4000/api/vote', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const responseData = await response.json();
+            console.log(responseData); // Handle the response from the server
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
     const handleSubmit = async () => {
-        let userName = document.getElementById('user-name').value;
+        let name = document.getElementById('user-name').value;
         let boVotes = mapSelection;
-        let officialVote = { userName, boVotes };
+        let officialVote = { name, boVotes };
         
         try {
             const response = await fetch('http://localhost:4000/api/vote', {
@@ -80,6 +100,7 @@ const BO = () => {
     return (
         <div id='component-container'>
             <h1>Black Ops</h1>
+            <button onClick={handleGet}>GET</button>
             <div id='container'>
                 {boMaps.map((map => (
                     <Map 

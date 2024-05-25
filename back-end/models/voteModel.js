@@ -7,23 +7,7 @@ const voteSchema = new Schema({
         type: String,
         required: true
     },
-    mwVotes: {
-        type: Array,
-        required: true
-    },
-    mw2Votes: {
-        type: Array,
-        required: true
-    },
-    mw3Votes: {
-        type: Array,
-        required: true
-    },
     boVotes: {
-        type: Array,
-        required: true
-    },
-    bo2Votes: {
         type: Array,
         required: true
     }
