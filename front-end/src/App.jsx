@@ -11,7 +11,6 @@ function App() {
   return (
     <div>
       <Submit />
-      <MW />
       <BO />
       <MW2 />
       <BO2 />

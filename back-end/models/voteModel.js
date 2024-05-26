@@ -7,7 +7,7 @@ const voteSchema = new Schema({
         type: String,
         required: true
     },
-    boVotes: {
+    votes: {
         type: Array,
         required: true
     }

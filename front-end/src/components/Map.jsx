@@ -5,22 +5,21 @@ import cross from '../assets/cross.png'
 
 const Map = (props) => {
 
-    const { name, image, decrement, increment, updateMap } = props;
+    const { name, id, image, decrement, increment, updateMap } = props;
     const [ selected, setSelected ] = useState(false);
     const [ selectedGameMode, setSelectedGameMode ] = useState('TDM');
 
     useEffect(() => {
         if (selected) {
-            updateMap({ name, selectedGameMode });
+            updateMap({ id, selectedGameMode });
         } 
     }, [selectedGameMode, selected]);
 
     const changeSelection = () => {
+        setSelected(!selected);
         if (selected) {
-            setSelected(false);
             decrement();
         } else {
-            setSelected(true);
             increment();
         }
     }

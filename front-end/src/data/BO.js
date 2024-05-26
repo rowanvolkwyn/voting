@@ -16,60 +16,74 @@ import wmd from '../assets/BO/WMD.webp';
 const boMaps = [
     {
         name: 'Array',
+        id: 'Array',
         src: array
     },
     {
         name: 'Cracked',
+        id: 'Cracked',
         src: cracked
     },
     {
         name: 'Crisis',
+        id: 'Crisis',
         src: crisis
     },
     {
         name: 'Firing Range',
+        id: 'FiringRange',
         src: firingRange
     },
     {
         name: 'Grid',
+        id: 'Grid',
         src: grid
     },
     {
         name: 'Hanoi',
+        id: 'Hanoi',
         src: hanoi
     },
     {
         name: 'Havana',
+        id: 'Havana',
         src: havana
     },
     {
         name: 'Jungle',
+        id: 'Jungle',
         src: jungle
     },
     {
         name: 'Launch',
+        id: 'Launch',
         src: launch
     },
     {
         name: 'Nuketown',
+        id: 'Nuketown',
         src: nuketown
     },
     {
         name: 'Radiation',
+        id: 'Radiation',
         src: radiation
     },
     {
         name: 'Summit',
+        id: 'Summit',
         src: summit
     },
     {
         name: 'Villa',
+        id: 'Villa',
         src: villa
     },
     {
         name: 'WMD',
+        id: 'WMD',
         src: wmd
-    },
-]
+    }
+];
 
 export default boMaps;

@@ -30,50 +30,36 @@ const BO = () => {
         setCount(count - 1);
     }
 
-    const updateSelectMap = (mapData) => {
-        const { name, selectedGameMode } = mapData;
+    const updateSelectGameMode = (mapData) => {
+        const { id, selectedGameMode } = mapData;
         setMapSelection(prevSelection => {
             // Ensure the map exists in the selection state
-            if (prevSelection[name]) {
+            if (prevSelection[id]) {
                 return {
                     ...prevSelection,
-                    [name]: {
-                        selected: !prevSelection[name].selected,
+                    [id]: {
+                        selected: true,
                         gameMode: selectedGameMode
                     }
                 };
             } else {
                 // Handle the case where the map does not exist in the selection state
-                console.error(`Map ${name} does not exist in the selection state`);
+                console.error(`Map ${id} does not exist in the selection state`);
                 return prevSelection;
             }
         });
     }
 
-    const handleGet = async () => {
-        try {
-            const response = await fetch('http://localhost:4000/api/vote', {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            });
-
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-
-            const responseData = await response.json();
-            console.log(responseData); // Handle the response from the server
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    }
+    
 
     const handleSubmit = async () => {
         let name = document.getElementById('user-name').value;
-        let boVotes = mapSelection;
-        let officialVote = { name, boVotes };
+        console.log(name);
+        let votes = mapSelection;
+        console.log(votes);
+        let officialVote = { name, votes };
+        console.log(officialVote);
+        console.log(JSON.stringify(officialVote));
         
         try {
             const response = await fetch('http://localhost:4000/api/vote', {
@@ -100,16 +86,16 @@ const BO = () => {
     return (
         <div id='component-container'>
             <h1>Black Ops</h1>
-            <button onClick={handleGet}>GET</button>
             <div id='container'>
                 {boMaps.map((map => (
                     <Map 
                         key={map.name}
                         name={map.name}
                         image={map.src}
+                        id={map.id}
                         increment={incrementCount}
                         decrement={decrementCount}
-                        updateMap={updateSelectMap}
+                        updateMap={updateSelectGameMode}
                     />
                 )))}
             </div>
